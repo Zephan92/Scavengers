@@ -51,18 +51,18 @@ public class CollectResource : MonoBehaviour
 
 	private void Respawn()
 	{
-		currentObject.collider.enabled = false;
+		currentObject.GetComponent<Collider>().enabled = false;
 		//Debug.Log("Collider off");
-		currentObject.renderer.enabled = false;
+		currentObject.GetComponent<Renderer>().enabled = false;
 		//Debug.Log("Renderer off");
 		Invoke("RespawnHelper", setRespawnTime);
 	}
 
 	private void RespawnHelper()
 	{
-		currentObject.collider.enabled = true;
+		currentObject.GetComponent<Collider>().enabled = true;
 		//Debug.Log("Collider on");
-		currentObject.renderer.enabled = true;
+		currentObject.GetComponent<Renderer>().enabled = true;
 		//Debug.Log("Renderer on");
 	}
 }

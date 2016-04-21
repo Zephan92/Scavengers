@@ -7,6 +7,6 @@ public class Hover : MonoBehaviour
 	
 	void OnTriggerStay(Collider other) 
 	{
-       	other.rigidbody.AddForce(Vector3.up * hover, ForceMode.Acceleration);
+       	other.GetComponent<Rigidbody>().AddForce(Vector3.up * hover, ForceMode.Acceleration);
     }
 }

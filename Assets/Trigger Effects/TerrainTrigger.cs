@@ -14,7 +14,7 @@ public class TerrainTrigger : MonoBehaviour {
 	{
 		gt = go.GetComponent("GenerateTerrain") as GenerateTerrain;
 		isGenerated = false;
-		thisTrigger.renderer.enabled = true;
+		thisTrigger.GetComponent<Renderer>().enabled = true;
 		tagName = thisTrigger.transform.gameObject.tag;
 		//Debug.Log("Spawned a " + tagName);
 	}
@@ -23,7 +23,7 @@ public class TerrainTrigger : MonoBehaviour {
 	{//Debug.Log("Entered a " + tagName);
 		if(isGenerated != true)
 		{
-			thisTrigger.renderer.enabled = false;
+			thisTrigger.GetComponent<Renderer>().enabled = false;
 			if(tagName == "NorthTrigger")
 			{//Debug.Log("Started to Build North Terrain");
 				//Debug.Log("This trigger is at " + blockPosition.position.ToString());

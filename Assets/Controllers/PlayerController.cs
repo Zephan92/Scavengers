@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
 	{
-		player.rigidbody.isKinematic = false;
+		player.GetComponent<Rigidbody>().isKinematic = false;
 		if ( Input.GetMouseButtonUp( 0 ) ) 
 		{		
 			resource = CheckForResource();
@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
 		
 		movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 		
-		rigidbody.AddForce(movement * speed * Time.deltaTime);
+		GetComponent<Rigidbody>().AddForce(movement * speed * Time.deltaTime);
 	}
 	
 	void OnTriggerEnter(Collider other) 
@@ -151,6 +151,6 @@ public class PlayerController : MonoBehaviour
 	{
 		resetReference.ResetMap(resetObject);
 		player.position = new Vector3(5,0.5f,5);
-		player.rigidbody.isKinematic = true;
+		player.GetComponent<Rigidbody>().isKinematic = true;
 	}
 }
